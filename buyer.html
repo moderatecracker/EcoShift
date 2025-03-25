@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">Home</a>
+            <div class="nav-right">
+                <button id="wishlistBtn" class="btn">Wishlist (<span id="wishlistCount">0</span>)</button>
+                <button id="cartBtn" class="btn">Cart (<span id="cartCount">0</span>)</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Products Available</h1>
+        <div id="productsGrid" class="products-grid">
+            <!-- Products will be loaded here dynamically -->
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <h2>Shopping Cart</h2>
+            <div id="cartItems"></div>
+            <div class="cart-total">
+                <h3>Total: $<span id="cartTotal">0</span></h3>
+            </div>
+            <button class="btn" onclick="checkout()">Checkout</button>
+            <button class="btn" onclick="closeModal('cartModal')">Close</button>
+        </div>
+    </div>
+
+    <!-- Wishlist Modal -->
+    <div id="wishlistModal" class="modal">
+        <div class="modal-content">
+            <h2>Wishlist</h2>
+            <div id="wishlistItems"></div>
+            <button class="btn" onclick="closeModal('wishlistModal')">Close</button>
+        </div>
+    </div>
+
+    <script src="buyer.js"></script>
+</body>
+</html>
